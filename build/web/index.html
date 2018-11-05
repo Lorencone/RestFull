@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, options);
+          });
+
+          // Or with jQuery
+
+          $(document).ready(function(){
+            $('select').formSelect();
+          });
+        </script>
+    
+    </head>
+    <body>
+        <div class="container">
+            <h3>Cálculo de Emprestimo</h1>
+            <div class="row">
+                <form class="col s12" action="" method="post">
+                  <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Informe o Valor a ser Parcelado" id="valor" name="valor" type="text" class="validate">
+                      <label for="valor">Valor:</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="parcelas" name="parcelas">
+                          <option value="" disabled selected>Selecione</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                          <option value="11">11</option>
+                          <option value="12">12</option>
+                          <option value="13">13</option>
+                          <option value="14">14</option>
+                          <option value="15">15</option>
+                        </select>
+                        <label>Parcelas</label>
+                    </div>
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
+                </form>
+          </div>
+        </div>
+    </body>
+</html>
