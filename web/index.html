@@ -38,7 +38,7 @@ and open the template in the editor.
             $("#calcular").click(function () {
                 
                 dados = $('#calculo').serialize();
-                $.post("/java-webrest/api/financeiro", dados,
+                $.post("/RESTFULL/api/financeiro", dados,
                     function (data) {
                         $('#mensagem').html(data);
                     });
@@ -54,7 +54,7 @@ and open the template in the editor.
         <div class="container">
             <h3>Cálculo de Emprestimo</h1>
             <div class="row">
-                <form class="col s12" action="calculo" method="post">
+                <form class="col s12" id="calculo" method="post">
                   <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Informe o Valor a ser Parcelado" id="valor" name="valor" type="text" class="validate">
@@ -85,6 +85,7 @@ and open the template in the editor.
                         <i class="material-icons right">send</i>
                       </button>
                 </form>
+                <div id="mensagem" class="shadow-lg bg-white" style="padding: 10px"></div>
           </div>
         </div>
     </body>
