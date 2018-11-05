@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Cálculo de Emprestimo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Compiled and minified CSS -->
@@ -27,15 +27,34 @@ and open the template in the editor.
 
           $(document).ready(function(){
             $('select').formSelect();
-          });
+          });        
         </script>
+        
+        <script>
+        $(document).ready(function () {
+            
+            $('#mensagem').hide();
+            
+            $("#calcular").click(function () {
+                
+                dados = $('#calculo').serialize();
+                $.post("/java-webrest/api/financeiro", dados,
+                    function (data) {
+                        $('#mensagem').html(data);
+                    });
+                    
+                $('#mensagem').show();
+            });
+    });
+    </script>
+
     
     </head>
     <body>
         <div class="container">
             <h3>Cálculo de Emprestimo</h1>
             <div class="row">
-                <form class="col s12" action="" method="post">
+                <form class="col s12" action="calculo" method="post">
                   <div class="row">
                     <div class="input-field col s12">
                         <input placeholder="Informe o Valor a ser Parcelado" id="valor" name="valor" type="text" class="validate">
